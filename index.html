@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>          
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestell App</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/restaurant.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/notifications.css">
+    <link rel="stylesheet" href="styles/splash.css">
+</head>
+<body>
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-container">
+            <div class="splash-image">
+                <img src="./assets/animation/knife.png" alt="knife" draggable="false">
+            </div>
+            <div class="splash-image">
+                <img src="./assets/animation/app.png" alt="app" draggable="false">
+            </div>
+            <div class="splash-image">
+                <img src="./assets/animation/fork.png" alt="fork" draggable="false">
+            </div>
+            <div class="splash-image splash-die">
+                <span class="die-text">Die</span>
+            </div>
+            <div class="splash-image">
+                <img src="./assets/animation/beste.png" alt="beste" draggable="false">
+            </div>
+        </div>
+    </div>
+    
+    <button id="cart-toggle-btn" class="cart-toggle">
+        🛒
+        <span id="cart-badge" class="cart-badge">0</span>
+    </button>
+
+    <div class="hero-header">
+        <div class="hero-image">
+            <img src="assets/img/background.jpg" alt="Sushi Restaurant">
+        </div>
+        <div class="restaurant-logo">
+            <img src="assets/icons/logo.png" alt="Bestell App Logo">
+        </div>
+    </div>
+
+    <section class="restaurant-info">
+        <div class="restaurant-header">
+            <div class="restaurant-details">
+                <h1 class="restaurant-name">Sushi Paradise</h1>
+                <div class="restaurant-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-text">4.5 (250+ Reviews)</span>
+                </div>
+                <p class="restaurant-description">
+                    🍣 Authentic Japanese Sushi • Freshly Prepared • Premium Ingredients
+                </p>
+            </div>
+        </div>
+        <div class="restaurant-meta">
+            <div class="meta-item">
+                <span class="meta-icon">🚚</span>
+                <div>
+                    <strong>Delivery Time</strong>
+                    <p>30-45 Min</p>
+                </div>
+            </div>
+            <div class="meta-item">
+                <span class="meta-icon">💶</span>
+                <div>
+                    <strong>Minimum Order</strong>
+                    <p>15.00€</p>
+                </div>
+            </div>
+            <div class="meta-item">
+                <span class="meta-icon">🎁</span>
+                <div>
+                    <strong>Delivery Cost</strong>
+                    <p>5.00€</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="product-container">
+        </section>
+        <aside id="cart-container" class="hidden">
+            <div class="cart-header">
+                <h2>Your Cart (<span id="total-items">0</span>)</h2>
+                <button id="cart-close-btn" class="cart-close-btn">×</button>
+            </div>
+            
+            <div class="delivery-options">
+                <button class="delivery-btn active" data-type="delivery">
+                    🚚 Delivery
+                </button>
+                <button class="delivery-btn" data-type="pickup">
+                    🏪 Pickup
+                </button>
+            </div>
+            
+            <div id="cart-items">
+                <p class="empty-cart-message">Your cart is empty</p>
+            </div>
+            <div class="cart-summary"> 
+                <p id="delivery-fee-row">Delivery Fee: <span id="delivery-fee-amount">5.00€</span></p>
+                <p><strong>Total: <span id="subtotal">5.00€</span></strong></p>
+            </div>
+            <button id="cart-btn">Checkout</button>
+        </aside>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sushi Paradise</h3>
+                <p>🍣 Authentic Japanese Cuisine</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📞 +49 123 456 789</p>
+                <p>📧 info@sushiparadise.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Hours</h4>
+                <p>Mon-Sun: 10:00 - 22:00</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sushi Paradise. All rights reserved. | Made with ❤️ by Bestell App</p>
+        </div>
+    </footer>
+    
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
