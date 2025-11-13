@@ -1,0 +1,555 @@
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto; 
+}
+
+body {
+    font-family: "MomoTrustDisplay", sans-serif;
+    background :url('./assets/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+header {
+   
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    height: auto;
+}
+
+#product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.roll-card {
+    display: flex;
+    flex-direction: row;  
+    align-items: stretch; 
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 0;
+    text-align: left; 
+    width: 100%;
+    height: 220px;
+    margin: 0;
+    gap: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(67, 228, 153, 0.1);
+    overflow: hidden;
+}
+
+.roll-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(67, 228, 153, 0.2);
+    border-color: rgba(67, 228, 153, 0.3);
+}
+
+.roll-card img {
+    width: 220px;  
+    height: 220px;
+    object-fit: cover;  
+    border-radius: 0;
+    flex-shrink: 0;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+}
+
+.roll-card:hover img {
+    transform: scale(1.05);
+}
+
+.roll-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.roll-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+.roll-description {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+.roll-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.roll-price {
+    font-size: 24px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #43e499 0%, #0501e2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+#cart-container {
+   width: 350px;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    flex-shrink: 0;
+    margin-left: 0;
+}
+
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #43e499 0%, #0501e2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(67, 228, 153, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.add-to-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 228, 153, 0.4);
+    transition: transform 0.2s ease-in-out;
+}
+
+footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(135deg, #43e499 0%, #0501e2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+    color: #43e499;
+    font-weight: 600;
+}
+
+.footer-section p {
+    margin: 8px 0;
+    color: #bdc3c7;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #95a5a6;
+    font-size: 14px;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 10000;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-success {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.notification-error {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.modal-body hr {
+    margin: 15px 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+.modal-total {
+    font-size: 20px !important;
+    color: #667eea !important;
+}
+
+.modal-info {
+    font-style: italic;
+    color: #888 !important;
+    font-size: 14px !important;
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-secondary {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+    background: #6c757d;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        align-items: center; 
+    }
+    
+    #cart-container {
+        width: 100%;
+        max-width: 600px;  
+        position: static;
+        order: 2;
+        margin: 0 auto;  
+    }
+    
+    #product-container {
+        order: 1;
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .roll-card {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 100px;
+    }
+    
+    footer {
+        padding: 30px 15px 15px;
+        margin-top: 40px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .footer-bottom p {
+        font-size: 12px;
+    }
+    
+    main {
+        padding: 10px;
+    }
+    
+    .roll-card {
+        width: 100%;
+        max-width: 500px;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+
+    }
+    
+    .roll-card img {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .product-container {
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #cart-container {
+        max-width: 80%;
+    }
+    .add-to-cart-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .logo {
+        width: 80px;
+    }
+    
+    .roll-card {
+        padding: 10px;
+        align-items: center;
+    }
+    
+    .roll-card img {
+        height: 150px;
+        
+    }
+    
+    #cart-container {
+        padding: 15px;
+        width: 80%;
+    }
+    
+    .add-to-cart-btn {
+        width: 100%;
+    }
+
+    .roll-price {
+        font-size: 24px;
+        
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.2em;
+    }
+    
+    .logo {
+        width: 60px;
+    }
+    
+    main {
+        padding: 5px;
+        gap: 10px;
+    }
+    
+    .roll-card {
+        padding: 8px;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .roll-card img {
+        height: 120px;
+    }
+    
+    .roll-card-content {
+        padding: 5px;
+    }
+    
+    .roll-price {
+        font-size: 20px;
+    }
+    
+    .add-to-cart-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    #cart-container {
+        padding: 10px;
+        width: 90%;
+    }
+    
+    .notification {
+        right: 10px;
+        top: 10px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .modal {
+        width: 95%;
+        max-width: none;
+    }
+    
+    .modal-header h2 {
+        font-size: 20px;
+    }
+    
+    .modal-body p {
+        font-size: 14px;
+    }
+}
