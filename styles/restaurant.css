@@ -1,4 +1,4 @@
-/* Hero Header with Restaurant Image */
+
 .hero-header {
     position: relative;
     width: 100%;
@@ -40,7 +40,7 @@
     border-radius: 50%;
 }
 
-/* Restaurant Info Section */
+
 .restaurant-info {
     background: white;
     margin: 100px auto 20px;
