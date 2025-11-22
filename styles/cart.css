@@ -320,6 +320,28 @@
     box-shadow: none;
 }
 
+
+@media (min-width: 769px) {
+    .cart-toggle {
+        display: none;
+    }
+
+    #cart-container.hidden {
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .cart-close-btn {
+        display: none;
+    }
+
+    #cart-container{
+        top:250px;
+        position:sticky;
+    }
+}
+
 @media (max-width: 768px) {
     #cart-container {
         width: 100%;
