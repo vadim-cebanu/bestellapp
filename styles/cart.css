@@ -433,7 +433,7 @@
     font-weight: 700;
     box-shadow: 0 6px 20px rgba(67, 228, 153, 0.4);
     z-index: 9999;
-    cursor: pointer; /* bara poate deschide coșul la tap */
+    cursor: pointer;
 }
 
 .mobile-cart-bar.hidden {
@@ -445,7 +445,7 @@
 }
 
 .mobile-cart-price {
-    /* stil de preț ca în .roll-price */
+   
     background: linear-gradient(135deg, #ffffff 0%, #f1f5ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255,255,255,0.95);
@@ -457,7 +457,7 @@
     display: flex;
   }
 
-  /* ascundem badge-ul mic pe mobil */
+  
   #cart-toggle-btn {
     display: none !important;
   }
