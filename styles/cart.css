@@ -20,8 +20,23 @@
     pointer-events: none;
 }
 
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 900;
+}
+
+.cart-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
 .cart-header {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
@@ -337,30 +352,38 @@
     }
 
     #cart-container{
-        top:250px;
+        top:0;
         position:sticky;
     }
 }
 
 @media (max-width: 768px) {
-    #cart-container {
-        width: 100%;
-        right: 0;
-        left: 0;
-        top: auto;
-        bottom: 0;
-        max-height: 80vh;
-        border-radius: 20px 20px 0 0;
+    .cart-toggle {
+        right: 20px;
+        bottom: 80px;
     }
+
     
-    #cart-container.hidden {
-        transform: translateY(100%);
+    .cart-icon {
+        font-size: 22px;
     }
-    
+
+    .cart-toggle-label {
+        font-weight: 500;
+        margin-left: 8px;
+    }
+
+    .cart-toggle-total {
+        margin-left: auto;
+        font-weight: 700;
+        font-size: 16px;
+    }
+}
+
     .cart-toggle {
         right: 50%;
         top: auto;
-        bottom: 20px;
+        bottom: 80px;
     }
     
     .cart-product {
@@ -390,6 +413,54 @@
         justify-content: space-between;
         display: flex;
     }
+
+ 
+
+.mobile-cart-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #43e499 0%, #0501e2 100%);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 999px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(67, 228, 153, 0.4);
+    z-index: 9999;
+    cursor: pointer; /* bara poate deschide coșul la tap */
+}
+
+.mobile-cart-bar.hidden {
+    display: none !important;
+}
+
+.mobile-cart-label {
+    opacity: 0.9;
+}
+
+.mobile-cart-price {
+    /* stil de preț ca în .roll-price */
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255,255,255,0.95);
+    font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  #mobile-cart-bar {
+    display: flex;
+  }
+
+  /* ascundem badge-ul mic pe mobil */
+  #cart-toggle-btn {
+    display: none !important;
+  }
 }
 
 @media (max-width: 320px) {
