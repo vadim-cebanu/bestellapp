@@ -2,7 +2,10 @@ main {
     display: flex;
     gap: 20px;
     padding: 20px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 body {
@@ -11,6 +14,10 @@ body {
     background-size: cover;
     margin: 0;
     padding: 0;
+}
+
+body.modal-open {
+    overflow: hidden;
 }
 header {
    
@@ -37,8 +44,6 @@ h1 {
     gap: 20px;
     flex: 1;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .roll-card {
@@ -121,20 +126,6 @@ h1 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
-}
-
-#cart-container {
-   width: 350px;
-    max-width: 350px;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: fit-content;
-    position: sticky;
-    top: 20px;
-    flex-shrink: 0;
-    margin-left: 0;
 }
 
 .add-to-cart-btn {
@@ -226,32 +217,6 @@ footer {
     margin: 0;
     color: #95a5a6;
     font-size: 14px;
-}
-
-.notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 15px 25px;
-    border-radius: 8px;
-    color: white;
-    font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transform: translateX(400px);
-    transition: transform 0.3s ease;
-    z-index: 10000;
-}
-
-.notification.show {
-    transform: translateX(0);
-}
-
-.notification-success {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.notification-error {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
 
@@ -352,27 +317,6 @@ footer {
     font-size: 14px !important;
 }
 
-.modal-footer {
-    padding: 20px;
-    border-top: 1px solid #eee;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.btn-secondary {
-    padding: 10px 30px;
-    border: none;
-    border-radius: 6px;
-    background: #6c757d;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.2s;
-}
-
-.btn-secondary:hover {
-    background: #5a6268;
-}
 @media (max-width: 1024px) {
     main {
         flex-direction: column;
@@ -531,25 +475,5 @@ footer {
     #cart-container {
         padding: 10px;
         width: 90%;
-    }
-    
-    .notification {
-        right: 10px;
-        top: 10px;
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-    
-    .modal {
-        width: 95%;
-        max-width: none;
-    }
-    
-    .modal-header h2 {
-        font-size: 20px;
-    }
-    
-    .modal-body p {
-        font-size: 14px;
     }
 }
