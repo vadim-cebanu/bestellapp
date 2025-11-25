@@ -44,7 +44,7 @@ function deleteItemFromCart(id) {
 
 function clearTheCart() {
     cartData.items = {};
-    showEmptyCart();
+    showEmptyCart(); 
     calculateTotal();
     updateBadge();
 }
@@ -60,14 +60,13 @@ function updateItemQuantity(id, product) {
     if (cartData.items[id]) {
         cartData.items[id].quantity += 1;
     } else {
-        cartData.items[id] = {
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            img: product.img,
-            quantity: 1
-        };
-    }
+                    cartData.items[id] = {
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        img: product.image,
+                        quantity: 1
+                    };    }
 }
 
 function updateCart() {
@@ -179,7 +178,7 @@ function initializeEventListeners() {
                 const rollCard = event.target.closest('.roll-card');
                 if (rollCard) {
                     const productId = parseInt(rollCard.dataset.id, 10);
-                    addItemToCart(productId, products);
+                    addItemToCart(productId, products); 
                 }
             }
         });
