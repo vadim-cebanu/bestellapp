@@ -13,7 +13,6 @@ const mobileCartBar = document.getElementById('mobile-cart-bar');
 const mobileCartPrice = document.getElementById('mobile-cart-price');
 
 
-
 const cart = {
     items: {},
     deliveryType: 'delivery',
