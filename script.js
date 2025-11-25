@@ -12,37 +12,20 @@ const cartOverlay = document.getElementById('cart-overlay');
 const mobileCartBar = document.getElementById('mobile-cart-bar');
 const mobileCartPrice = document.getElementById('mobile-cart-price');
 
-const splashScreen = document.getElementById('splash-screen');
-const splashContainer = document.querySelector('.splash-container');
 
-window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        splashContainer.classList.add('active');
-    }, 500);
 
-    setTimeout(() => {
-        splashContainer.classList.add('moving-to-header');
-    }, 3500);
-
-    setTimeout(() => {
-        splashScreen.style.display = 'none';
-    }, 5000);
-});
-
-class CartItem {
-    constructor() {
-        this.items = {};
-        this.deliveryType = 'delivery';
-        this.deliveryFee = 5;
-        this.total = 5;
-    }
+const cart = {
+    items: {},
+    deliveryType: 'delivery',
+    deliveryFee: 5,
+    total: 5,
 
     setDeliveryType(type) {
         this.deliveryType = type;
         this.deliveryFee = type === 'delivery' ? 5 : 0;
 
         if (deliveryFeeAmount) {
-            deliveryFeeAmount.textContent = `${this.deliveryFee.toFixed(2)}?`;
+            deliveryFeeAmount.textContent = `${this.deliveryFee.toFixed(2)}€`;
         }
 
         if (deliveryFeeRow) {
@@ -50,7 +33,7 @@ class CartItem {
         }
 
         this.calculateTotal();
-    }
+    },
 
     addItem(id, products) {
         const product = products.find(item => item.id === id);
@@ -59,7 +42,7 @@ class CartItem {
         this.updateItemQuantity(id, product);
         this.updateCart();
         showNotification(`+ ${product.name} added to cart!`, 'success');
-    }
+    },
 
     updateItemQuantity(id, product) {
         if (this.items[id]) {
@@ -67,12 +50,12 @@ class CartItem {
         } else {
             this.items[id] = { ...product, quantity: 1 };
         }
-    }
+    },
 
     updateCart() {
         this.renderCart();
         this.calculateTotal();
-    }
+    },
 
     removeItem(id) {
         if (this.items[id] && this.items[id].quantity > 1) {
@@ -81,12 +64,12 @@ class CartItem {
             delete this.items[id];
         }
         this.updateCart();
-    }
+    },
 
     deleteItem(id) {
         delete this.items[id];
         this.updateCart();
-    }
+    },
 
     renderCart() {
         cartItems.innerHTML = '';
@@ -99,13 +82,13 @@ class CartItem {
 
         itemsArray.forEach(item => this.renderCartItem(item));
         this.updateBadge();
-    }
+    },
 
     showEmptyCart() {
         cartItems.innerHTML = '<p class="empty-cart-message">Your cart is empty</p>';
         this.updateBadge();
         this.calculateTotal();
-    }
+    },
 
     renderCartItem(item) {
         const itemTotal = (item.price * item.quantity).toFixed(2);
@@ -123,7 +106,7 @@ class CartItem {
                 </div>
             </div>
         `;
-    }
+    },
 
     updateBadge() {
         const count = this.getCounts();
@@ -139,11 +122,11 @@ class CartItem {
         if (mobileCartBar) {
             mobileCartBar.classList.remove('hidden');
         }
-    }
+    },
 
     getCounts() {
         return Object.values(this.items).reduce((sum, item) => sum + item.quantity, 0);
-    }
+    },
 
     calculateTotal() {
         const subtotal = Object.values(this.items).reduce(
@@ -160,7 +143,7 @@ class CartItem {
         if (mobileCartPrice) {
             mobileCartPrice.textContent = `${this.total.toFixed(2)}€`;
         }
-    }
+    },
 
     clearCart() {
         this.items = {};
@@ -178,7 +161,7 @@ class CartItem {
             mobileCartPrice.textContent = `${this.total.toFixed(2)}€`;
         }
     }
-}
+};
 
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
@@ -256,7 +239,7 @@ function closeCheckoutModal(button) {
     document.body.classList.remove('modal-open');
 }
 
-const cart = new CartItem();
+
 
 function isMobileView() {
     return window.matchMedia('(max-width: 768px)').matches;
