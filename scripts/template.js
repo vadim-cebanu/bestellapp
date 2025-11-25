@@ -1,6 +1,13 @@
 const rollCards = document.getElementById('product-container'); 
-products.forEach(
-    ({id, name, price, image, description}) => {
+
+function renderProductCards(products) {
+    products.forEach(({
+        id,
+        name,
+        price,
+        image,
+        description
+    }) => {
         rollCards.innerHTML += `
         <div class="roll-card" data-id="${id}">
             <img src="./assets/img/${image}" alt="${name}" class="roll-image">
@@ -14,8 +21,8 @@ products.forEach(
             </div>
         </div>
         `;
-    }
-);
+    });
+}
 
 function renderCartItem(item) {
     const itemTotal = (item.price * item.quantity).toFixed(2);
@@ -37,8 +44,6 @@ function renderCartItem(item) {
 
 function showEmptyCart() {
     cartItems.innerHTML = '<p class="empty-cart-message">Your cart is empty</p>';
-    cart.updateBadge();
-    cart.calculateTotal();
 }
 
 function showNotification(message, type = 'success') {
@@ -116,3 +121,5 @@ function closeCheckoutModal(button) {
     }
     document.body.classList.remove('modal-open');
 }
+
+renderProductCards(products);

@@ -3,17 +3,17 @@ main {
     gap: 20px;
     padding: 20px;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1440px;
     width: 100%;
     box-sizing: border-box;
 }
 
 body {
-    font-family: "MomoTrustDisplay", sans-serif;
     background :url('./assets/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
+    font-family: 'MomoTrustDisplay', sans-serif;
 }
 
 body.modal-open {
@@ -161,7 +161,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto 30px;
     padding: 0 20px;
 }
@@ -210,7 +210,7 @@ footer {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -219,6 +219,7 @@ footer {
     color: #95a5a6;
     font-size: 14px;
 }
+
 
 
 .modal-overlay {
@@ -324,16 +325,7 @@ footer {
         align-items: center; 
     }
     
-    #cart-container {
-        width: 100%;
-        max-width: 600px;  
-        position: static;
-        order: 2;
-        margin: 0 auto;  
-    }
-    
     #product-container {
-        order: 1;
         width: 100%;
         grid-template-columns: 1fr;
         padding: 10px;
@@ -394,9 +386,6 @@ footer {
         flex-direction: column;
     }
     
-    #cart-container {
-        max-width: 80%;
-    }
     .add-to-cart-btn {
         width: 100%;
     }

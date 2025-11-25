@@ -8,10 +8,11 @@
     right: 20px;
     top: 20px;
     max-height: calc(100vh - 40px);
-    overflow-y: auto;
     overflow-x: hidden;
     transition: transform 0.3s ease, opacity 0.3s ease;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
 }
 
 #cart-container.hidden {
@@ -158,9 +159,10 @@
 }
 
 #cart-items {
-    min-height: 100px;
     margin-bottom: 20px;
     overflow-x: hidden;
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 .empty-cart-message {
@@ -336,7 +338,7 @@
 }
 
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
     .cart-toggle {
         display: none;
     }
@@ -357,7 +359,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .cart-toggle {
         right: 20px;
         bottom: 80px;
@@ -452,7 +454,7 @@
     font-weight: 900;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #mobile-cart-bar {
     display: flex;
   }
