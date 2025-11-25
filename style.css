@@ -116,6 +116,7 @@ h1 {
     margin-top: auto;
     padding-top: 12px;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
+    gap: 40px;
 }
 
 .roll-price {
