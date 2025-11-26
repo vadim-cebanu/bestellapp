@@ -465,6 +465,16 @@
   }
 }
 
+@media (max-width:480px){
+    #cart-container{
+    width: 80%;
+    padding: 15px;
+    right: 10px;
+    top: 10px;
+     max-height: calc(100vh - 20px);
+}
+}
+
 @media (max-width: 320px) {
     #cart-container {
         width: 280px;
