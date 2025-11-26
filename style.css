@@ -10,7 +10,7 @@ main {
 }
 
 body {
-    background :url('./assets/img/background.jpg') no-repeat center center fixed;
+    background: url('./assets/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -20,12 +20,14 @@ body {
 body.modal-open {
     overflow: hidden;
 }
+
 header {
-   
+
     padding: 10px 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
     color: #333;
     text-align: center;
@@ -49,13 +51,13 @@ h1 {
 
 .roll-card {
     display: flex;
-    flex-direction: row;  
-    align-items: stretch; 
+    flex-direction: row;
+    align-items: stretch;
     background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     padding: 0;
-    text-align: left; 
+    text-align: left;
     width: 100%;
     height: 220px;
     margin: 0;
@@ -73,9 +75,9 @@ h1 {
 }
 
 .roll-card img {
-    width: 220px;  
+    width: 220px;
     height: 220px;
-    object-fit: cover;  
+    object-fit: cover;
     border-radius: 0;
     flex-shrink: 0;
     box-shadow: none;
@@ -241,6 +243,7 @@ footer {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -260,6 +263,7 @@ footer {
         transform: translateY(50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -323,15 +327,15 @@ footer {
 @media (max-width: 1024px) {
     main {
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
     }
-    
+
     #product-container {
         width: 100%;
         grid-template-columns: 1fr;
         padding: 0;
     }
-    
+
     .roll-card {
         width: 100%;
         max-width: 600px;
@@ -343,30 +347,30 @@ footer {
     .logo {
         width: 100px;
     }
-    
+
     footer {
         padding: 30px 15px 15px;
         margin-top: 40px;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 25px;
         text-align: center;
     }
-    
+
     .social-icons {
         justify-content: center;
     }
-    
+
     .footer-bottom p {
         font-size: 12px;
     }
-    
+
     main {
         padding: 10px;
     }
-    
+
     .roll-card {
         width: 100%;
         max-width: 500px;
@@ -375,7 +379,7 @@ footer {
         align-items: center;
 
     }
-    
+
     .roll-card img {
         width: 100%;
         height: 200px;
@@ -385,13 +389,13 @@ footer {
         align-items: center;
         justify-content: space-between;
     }
-    
+
     #product-container {
         gap: 15px;
         display: flex;
         flex-direction: column;
     }
-    
+
     .add-to-cart-btn {
         width: 100%;
     }
@@ -401,33 +405,33 @@ footer {
     h1 {
         font-size: 1.5em;
     }
-    
+
     .logo {
         width: 80px;
     }
-    
+
     .roll-card {
         padding: 10px;
         align-items: center;
     }
-    
+
     .roll-card img {
         height: 150px;
-        
+
     }
-    
+
     #cart-container {
         padding: 15px;
         width: 80%;
     }
-    
+
     .add-to-cart-btn {
         width: 100%;
     }
 
     .roll-price {
         font-size: 24px;
-        
+
     }
 }
 
@@ -435,38 +439,38 @@ footer {
     h1 {
         font-size: 1.2em;
     }
-    
+
     .logo {
         width: 60px;
     }
-    
+
     main {
         padding: 5px;
         gap: 10px;
     }
-    
+
     .roll-card {
         padding: 8px;
         gap: 10px;
         width: 100%;
     }
-    
+
     .roll-card img {
         height: 120px;
     }
-    
+
     .roll-card-content {
         padding: 5px;
     }
-    
+
     .roll-price {
         font-size: 20px;
     }
-    
+
     .add-to-cart-btn {
         padding: 8px 12px;
         font-size: 14px;
     }
-    
-   
+
+
 }

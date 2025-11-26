@@ -44,7 +44,7 @@ function deleteItemFromCart(id) {
 
 function clearTheCart() {
     cartData.items = {};
-    showEmptyCart(); 
+    showEmptyCart();
     calculateTotal();
     updateBadge();
 }
@@ -60,13 +60,14 @@ function updateItemQuantity(id, product) {
     if (cartData.items[id]) {
         cartData.items[id].quantity += 1;
     } else {
-    cartData.items[id] = {
-    id: product.id,
-    name: product.name,
-    price: product.price,
-    img: product.image,
-    quantity: 1
-};    }
+        cartData.items[id] = {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            img: product.image,
+            quantity: 1
+        };
+    }
 }
 
 function updateCart() {
@@ -150,7 +151,7 @@ function initializeCartToggles() {
     const mobileCartBar = document.getElementById('mobile-cart-bar');
     const cartCloseBtn = document.getElementById('cart-close-btn');
     const cartOverlay = document.getElementById('cart-overlay');
-    const cartContainer = document.getElementById('cart-container'); 
+    const cartContainer = document.getElementById('cart-container');
 
     const toggleCartVisibility = () => cartContainer.classList.contains('hidden') ? openCart() : closeCart();
 
@@ -163,10 +164,10 @@ function initializeCartToggles() {
 function initializeDeliveryButtonHandlers() {
     const deliveryBtns = document.querySelectorAll('.delivery-btn');
     deliveryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-    deliveryBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    setDeliveryType(btn.dataset.type);
+        btn.addEventListener('click', () => {
+            deliveryBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            setDeliveryType(btn.dataset.type);
         });
     });
 }
@@ -176,14 +177,14 @@ function initializeAddToCartHandler() {
 
     if (productContainer) {
         productContainer.addEventListener('click', (event) => {
-    if (event.target && event.target.classList.contains('add-to-cart-btn')) {
-    const rollCard = event.target.closest('.roll-card');
-    if (rollCard) {
-    const productId = parseInt(rollCard.dataset.id, 10);
-        addItemToCart(productId, products); 
-     }
- }
-});
+            if (event.target && event.target.classList.contains('add-to-cart-btn')) {
+                const rollCard = event.target.closest('.roll-card');
+                if (rollCard) {
+                    const productId = parseInt(rollCard.dataset.id, 10);
+                    addItemToCart(productId, products);
+                }
+            }
+        });
     }
 }
 
@@ -192,13 +193,13 @@ function initializeCheckoutButtonHandler() {
 
     if (cartBtn) {
         cartBtn.addEventListener('click', () => {
-    if (Object.keys(cartData.items).length > 0) {
-        showCheckoutModal(cartData);
-        setTimeout(() => clearTheCart(), 500);
-    } else {
-        showNotification('Your cart is empty!', 'error');
- }
- });
+            if (Object.keys(cartData.items).length > 0) {
+                showCheckoutModal(cartData);
+                setTimeout(() => clearTheCart(), 500);
+            } else {
+                showNotification('Your cart is empty!', 'error');
+            }
+        });
     }
 }
 
