@@ -95,32 +95,20 @@ function createModalContent(cart) {
 }
 
 function showCheckoutModal(cart) {
-    console.log('showCheckoutModal called');
     const overlay = document.createElement('div');
     overlay.className = 'modal-overlay';
-    console.log('modal-overlay created', overlay);
     const modal = document.createElement('div');
     modal.className = 'modal';
-    console.log('modal created', modal);
-
     modal.innerHTML = createModalContent(cart);
-    console.log('modal content set');
     overlay.appendChild(modal);
-    console.log('modal appended to overlay');
     document.body.appendChild(overlay);
-    console.log('overlay appended to body');
-
     document.body.classList.add('modal-open');
-    console.log('body class modal-open added');
-
     overlay.addEventListener('click', event => {
         if (event.target === overlay) {
-            console.log('overlay clicked, closing modal');
             overlay.remove();
             document.body.classList.remove('modal-open');
         }
     });
-    console.log('Event listener added to overlay');
 }
 
 function closeCheckoutModal(button) {
@@ -130,5 +118,4 @@ function closeCheckoutModal(button) {
     }
     document.body.classList.remove('modal-open');
 }
-
 renderProductCards(products);
